@@ -5,38 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Country Roleplay - Nafil Revan</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya tambahan untuk responsivitas mobile */
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap; /* Membuat menu turun ke bawah jika layar sempit */
+            gap: 15px;
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 180px;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        /* Khusus layar HP / Android */
+        @media (max-width: 480px) {
+            .header-top {
+                flex-direction: column; /* Ubah susunan dari kesamping jadi ke bawah */
+                align-items: center;
+                text-align: center;
+            }
+            .header-profile {
+                flex-direction: column;
+                text-align: center !important;
+            }
+            .header-profile div {
+                text-align: center !important;
+            }
+            nav {
+                justify-content: center;
+                width: 100%;
+                gap: 10px;
+            }
+            nav a {
+                font-size: 0.75rem;
+            }
+            .logo-img {
+                width: 120px !important; /* Perkecil logo sedikit di HP agar tidak penuh */
+                height: 120px !important;
+            }
+            .logo span {
+                font-size: 1.8rem !important; /* Perkecil tulisan BEYOND COUNTRY di HP */
+            }
+        }
+    </style>
 </head>
 <body>
 
-   <!-- NAVIGASI ATAS TATA LETAK VERTIKAL SIMETRIS (TANPA GARIS) -->
-    <header style="display: flex; flex-direction: column; gap: 15px; padding: 15px 20px; border: none !important; box-shadow: none !important;">
+    <!-- NAVIGASI ATAS TATA LETAK VERTIKAL SIMETRIS -->
+    <header>
         
-        <!-- BARIS ATAS: BIODATA (KIRI) & MENU (KANAN) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <!-- Biodata Nafil (Sudut Kiri Atas) -->
-            <div class="header-profile" style="display: flex; align-items: center; gap: 12px;">
+        <!-- BARIS ATAS: BIODATA & MENU -->
+        <div class="header-top">
+            <!-- Biodata Nafil -->
+            <div class="header-profile">
                 <img src="PP.jpeg" alt="Foto Nafil Revan" class="profile-img" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-                <div style="text-align: left;">
+                <div>
                     <p class="greeting-text" style="margin: 0; font-size: 0.65rem; letter-spacing: 1px; color: #aaa;">HALO, SAYA</p>
-                    <h1 class="name-title" style="margin: 2px 0; font-size: 1.1rem; line-height: 1.2;"><span class="typing-text">NAFIL REVAN PUTRA</span></h1>
+                    <h1 class="name-title" style="margin: 2px 0; font-size: 1.1rem; line-height: 1.2; color: #ff3333;"><span class="typing-text">NAFIL REVAN PUTRA</span></h1>
                     <p class="subtitle" style="margin: 0; font-size: 0.75rem; color: #888;">Beyond Country Staff</p>
                 </div>
             </div>
 
-            <!-- Menu Navigasi (Sudut Kanan Atas) -->
-            <nav style="display: flex; gap: 15px;">
+            <!-- Menu Navigasi -->
+            <nav>
                 <a href="#about">Tentang</a>
                 <a href="#features">Fitur Server</a>
                 <a href="#contact">Hubungi Admin</a>
             </nav>
         </div>
 
-        <!-- BARIS BAWAH: JUDUL SERVER GEDE DI TENGAH (LANGSUNG DI ATAS SEKSI "TENTANG") -->
-        <div class="logo" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; width: 100%; margin-top: 15px;">
-            <!-- Ukuran Logo 150px -->
+        <!-- BARIS BAWAH: JUDUL SERVER GEDE DI TENGAH -->
+        <div class="logo">
             <img src="LOGO.jpeg" alt="Logo Beyond Country" class="logo-img" style="width: 150px; height: 150px;">
-            <!-- Ukuran Font 2.5rem & Kata "COUNTRY" Berwarna Putih -->
-            <span style="font-weight: 900; font-size: 2.5rem; letter-spacing: 3px; text-transform: uppercase;">
+            <span style="font-weight: 900; font-size: 2.5rem; letter-spacing: 3px; text-transform: uppercase; color: #ff3333; text-align: center;">
                 BEYOND <span style="color: #ffffff;">COUNTRY</span>
             </span>
         </div>
@@ -44,8 +120,8 @@
     </header>
 
     <!-- BAGIAN UTAMA (DESKRIPSI SERVER) -->
-    <section class="hero" id="about" style="padding-top: 20px; border-top: none !important; box-shadow: none !important;">
-        <div class="about-box" style="text-align: center; border: none !important;">
+    <section class="hero" id="about" style="padding-top: 20px;">
+        <div class="about-box" style="text-align: center;">
             <h2>Tentang Beyond Country</h2>
             <p class="bio">Selamat datang di halaman informasi resmi kami. Kami menyajikan pengalaman bermain Roleplay terbaik di San Andreas Multiplayer dengan fitur-fitur unik dan komunitas yang solid.</p>
         </div>
@@ -91,14 +167,7 @@
                 <span class="card-link">Join Komunitas →</span>
             </div>
 
-            <!-- Kotak 6: Lainnya -->
-            <div class="card lightning-box" onclick="animatedLink('https://linktr.ee/beyondcountry.id')">
-                <h3>Dan Masih Banyak Lagi</h3>
-                <p>Sistem scripting kustom canggih, event mingguan, dan komunitas Whatsapp yang ramah siap menyambut Anda.</p>
-                <span class="card-link">Join Komunitas →</span>
-            </div>
-
-            <!-- Kotak 7: Promosi Join Komunitas (Terbaru) -->
+            <!-- Kotak 7: Promosi Join Komunitas -->
             <div class="card lightning-box" onclick="animatedLink('https://linktr.ee/beyondcountry.id')" style="background: linear-gradient(135deg, #1a0505 0%, #3a0808 100%); border: 1px solid #ff3333;">
                 <h3>Gak Sabar Mau Main?</h3>
                 <p style="font-weight: bold; color: #fff;">Penasaran sama kota nya yuk join ke komunitas Beyond Country!!</p>
@@ -108,7 +177,7 @@
         </div>
     </section>
 
-    <!-- BAGIAN HUBUNGI NOMOR ADMIN & PROMOSI JASA WEB -->
+    <!-- BAGIAN HUBUNGI NOMOR ADMIN -->
     <section class="contact-section" id="contact">
         <h2>Hubungi Admin Server</h2>
         <a href="https://wa.me/6281274738774" target="_blank" class="admin-btn">
@@ -125,10 +194,8 @@
         </div>
     </section>
 
-    <!-- EFEK PETIR TEBAL WARNA MERAH DI BAWAH WEBSITE -->
     <div class="bottom-lightning-bolt"></div>
 
-    <!-- JAVASCRIPT UNTUK ANIMASI KLIK KARTU/WEB -->
     <script>
         function animatedLink(url) {
             const flash = document.createElement('div');
