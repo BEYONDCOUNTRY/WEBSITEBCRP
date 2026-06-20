@@ -1,0 +1,386 @@
+/* Pengaturan Dasar Website Gelap-Merah */
+body {
+    background-color: #080202; /* Hitam pekat dengan sedikit rona merah */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    position: relative;
+    padding-bottom: 60px; /* TAMBAHAN: Jarak bawah supaya konten tidak tertutup petir merah */
+    overflow-x: hidden;
+}
+
+/* Navigasi */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20%;
+    background-color: #120303;
+    border-bottom: 2px solid #ff0000;
+}
+
+header .logo {
+    font-weight: bold;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: #ff0000; /* Warna Merah Menyala */
+    text-shadow: 0 0 10px #ff0000;
+}
+
+nav a {
+    color: #a1a1aa;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 8px #ff0000;
+}
+
+/* Bagian Perkenalan (Hero) */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff0000;
+    box-shadow: 0 0 20px #ff0000; /* Foto profil menyala merah */
+    margin-bottom: 25px;
+}
+
+.greeting-text {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #94a3b8;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.name-title {
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Efek Ketik Nama */
+.typing-text {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #ff0000;
+    white-space: nowrap;
+    animation: 
+        ketik 3.5s steps(30, end) infinite alternate,
+        kedip-kursor 0.75s step-end infinite;
+}
+
+.subtitle {
+    color: #ff3333;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.bio {
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Bagian Kotak Fitur */
+.wonders-section {
+    padding: 60px 5%; /* Dikurangi sedikit agar tidak terlalu sempit di HP */
+    text-align: center;
+}
+
+.wonders-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar kotak disesuaikan */
+}
+
+/* KOTAK FITUR DENGAN GARIS MERAH LIGHTNING */
+.card {
+    background-color: #120303;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.4s ease;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.3), 
+                inset 0 0 10px rgba(255, 0, 0, 0.1);
+    
+    /* Perbaikan Utama: Menggunakan width 100% dan max-width agar tidak melebar melebihi layar HP */
+    width: 100%;
+    max-width: 320px; 
+    box-sizing: border-box;
+    cursor: pointer; /* TAMBAHAN: Mengubah cursor menjadi pointer karena bisa di-klik */
+}
+
+/* Jika kamu memakai class ini, kita bikin fleksibel di HP */
+.wonder-row-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ffffff;
+    box-shadow: 0 0 25px #ff0000, inset 0 0 15px rgba(255, 0, 0, 0.4); /* TAMBAHAN: Efek pijaran dalam saat hover */
+}
+
+.wonder-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #ff0000;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* LINK DI DALAM KOTAK */
+.card-link {
+    color: #ff3333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.card:hover .card-link {
+    color: #ffffff;
+    text-shadow: 0 0 8px #ff0000;
+}
+
+/* BAGIAN HUBUNGI ADMIN */
+.contact-section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.admin-btn {
+    display: inline-block;
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 0 15px #ff0000;
+    transition: 0.3s;
+    margin-bottom: 40px; /* TAMBAHAN: Memberi jarak ke kotak promosi */
+}
+
+.admin-btn:hover {
+    transform: scale(1.05);
+    background-color: #ffffff;
+    color: #ff0000;
+    box-shadow: 0 0 25px #ffffff;
+}
+
+/* ==================================================== */
+/* TAMBAHAN BARU: KOTAK PROMOSI JASA WEBSITE            */
+/* ==================================================== */
+.promo-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #120303;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 2px dashed #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+}
+
+.promo-box h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.promo-box p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.promo-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ff0000;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.promo-btn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+    transform: translateY(-2px);
+}
+
+/* ==================================================== */
+/* TAMBAHAN BARU: EFEK ANIMASI KLIK FLASH (KILATAN)     */
+/* ==================================================== */
+.click-flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 9999;
+    pointer-events: none;
+    animation: flashAnim 0.3s ease-out forwards;
+}
+
+@keyframes flashAnim {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* ==================================================== */
+/* PERBAIKAN: PETIR MERAH DENGAN KETEBALAN YANG PAS      */
+/* ==================================================== */
+.bottom-lightning-bolt {
+    position: fixed;
+    bottom: -12px; /* Setelan pas agar lengkungannya menyembul sedikit di bawah */
+    left: 8%;
+    width: 84%; 
+    height: 16px; /* Ketebalan sedang (tidak terlalu tipis, tidak terlalu tebal) */
+    background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, #ff0000 75%);
+    
+    /* Lengkungan elegan */
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0; 
+    
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0.6; /* Warna merahnya kelihatan tapi tidak terlalu silau */
+    
+    /* Pijaran neon merah yang proporsional */
+    box-shadow: 
+        0 -6px 20px #ff0000, 
+        0 -12px 40px rgba(255, 0, 0, 0.5), 
+        inset 0 3px 6px rgba(255, 255, 255, 0.4);
+        
+    animation: lightningSpike 1.2s infinite alternate ease-in-out;
+}
+
+/* Animasi Denyutan Stabil (Tetap Kalem tapi Berenergi) */
+@keyframes lightningSpike {
+    0% {
+        transform: scaleY(0.85) translateY(2px);
+        opacity: 0.45;
+        box-shadow: 
+            0 -4px 15px #ff0000, 
+            0 -8px 25px rgba(255, 0, 0, 0.3);
+    }
+    50% {
+        transform: scaleY(1.05) translateY(0px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scaleY(1.15) translateY(-1px); /* Sedikit memuncak tapi terkontrol */
+        opacity: 0.65;
+        box-shadow: 
+            0 -8px 25px #ff0000, 
+            0 -16px 45px #ff0000,
+            0 -3px 12px #ffffff;
+    }
+}
+
+/* Animasi Ketik */
+@keyframes ketik {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes kedip-kursor {
+    from, to { border-color: transparent }
+    50% { border-color: #ff0000; }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* ==================================================== */
+/* SCRIPT TAMBAHAN: KHUSUS UNTUK LAYAR HP (RESPONSIVE)  */
+/* ==================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Menu & Logo jadi atas-bawah di HP */
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin: 0 10px; /* Jarak menu disesuaikan agar pas di HP */
+        font-size: 14px;
+    }
+
+    .name-title {
+        font-size: 28px; /* Ukuran teks nama dikecilkan agar tidak patah berantakan */
+    }
+
+    .typing-text {
+        white-space: normal; /* Supaya teks nama bisa turun ke bawah kalau kepanjangan di HP */
+        border-right: none;
+        animation: none; /* Matikan animasi ketik di HP agar tidak bug/terpotong */
+    }
+
+    .wonder-row-card {
+        flex-direction: column; /* Kalau pakai row card, otomatis jadi atas bawah di HP */
+        text-align: center;
+    }
+    
+    .bottom-lightning-bolt {
+        height: 6px; /* Sedikit dikecilkan di HP agar proporsional */
+    }
+}
